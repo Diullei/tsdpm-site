@@ -1,5 +1,7 @@
-TSD-Package-Manager-Search
-==========================
+tsdpm-site
+==========
+
+http://www.tsdpm.com/
 
 ## License
 

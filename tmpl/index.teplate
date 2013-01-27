@@ -44,7 +44,7 @@
 				<div class="navbar navbar-inverse" style="position: static;">
 				  <div class="navbar-inner">
 					<div class="container">
-					  <a class="brand" href="#">tsdpm</a>
+					  <a class="brand" href="/">tsdpm</a>
 					  <form class="navbar-search pull-left" action="">
 						<input type="search" ng-model="query" ng-change="search()" class="search input-medium search-query" placeholder="Search in {{items.length}} files...">
 					  </form>
