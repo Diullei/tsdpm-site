@@ -42,8 +42,9 @@ var html = index_template
 	.replace('####GUID####', GUID());
 	
 fs.writeFileSync('index.html', html, 'utf8');
-minify.optimize(['index.html']);
 
-var source_file = 'node_modules/minify/min/index.min.html';
-var source_file_content = fs.readFileSync(source_file, 'utf8');
-fs.writeFileSync('index.html', source_file_content, 'utf8');
+//minify.optimize(['index.html']);
+
+//var source_file = 'node_modules/minify/min/index.min.html';
+//var source_file_content = fs.readFileSync(source_file, 'utf8');
+//fs.writeFileSync('index.html', source_file_content, 'utf8');

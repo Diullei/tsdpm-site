@@ -64,17 +64,17 @@
 		<div id="_download" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="Label__download" aria-hidden="true">
 			<div class="modal-header">
 				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-				<h3 id="Label__download"><i class="icon-download-alt"></i>Download TSD&nbsp;<small>TypeScript Definition Package Manager</small></h3>
+				<h3 id="Label__download"><i class="icon-download-alt"></i>Download TSD <small>TypeScript Definition Package Manager</small></h3>
 			</div>
 			<div class="modal-body">
 				
 				<div class="nuget-badge">
-					<p>TSD is installed using&nbsp;<a href="http://nodejs.org/">node</a>&nbsp;and&nbsp;<a href="https://npmjs.org/package/tsd">npm</a>.&nbsp;To install use:</p>
+					<p>TSD is installed using <a href="http://nodejs.org/">node</a> and <a href="https://npmjs.org/package/tsd">npm</a>. To install use:</p>
 					
 					<p><code>$&gt; npm install -g tsd</code></p>
 					
 					<p>
-						Download as a&nbsp;<a href="https://github.com/Diullei/tsd/archive/master.zip">.zip</a>&nbsp;file.
+						Download as a <a href="https://github.com/Diullei/tsd/archive/master.zip">.zip</a> file.
 					</p>
 				</div>				
 				
@@ -90,11 +90,11 @@
 				<table class="table">
 					<thead>
 						<tr>
-							<th data-sort="name" class="name">Name&nbsp;<a ng-click="sort_by('name')"><i class="icon-sort"></i></a></th>
-							<th data-sort="description" class="description">Description&nbsp;<a ng-click="sort_by('description')"><i class="icon-sort"></i></a></th>
-							<th data-sort="stars" class="stars">Dependencies&nbsp;<a ng-click="sort_by('dependencies')"><i class="icon-sort"></i></a></th>
-							<th data-sort="updated" class="updated">Version&nbsp;<a ng-click="sort_by('version')"><i class="icon-sort"></i></a></th>
-							<th data-sort="owner" class="owner">Author&nbsp;<a ng-click="sort_by('author')"><i class="icon-sort"></i></a></th>
+							<th data-sort="name" class="name">Name <a ng-click="sort_by('name')"><i class="icon-sort"></i></a></th>
+							<th data-sort="description" class="description">Description <a ng-click="sort_by('description')"><i class="icon-sort"></i></a></th>
+							<th data-sort="stars" class="stars">Dependencies <a ng-click="sort_by('dependencies')"><i class="icon-sort"></i></a></th>
+							<th data-sort="updated" class="updated">Version <a ng-click="sort_by('version')"><i class="icon-sort"></i></a></th>
+							<th data-sort="owner" class="owner">Author <a ng-click="sort_by('author')"><i class="icon-sort"></i></a></th>
 						</tr>
 					</thead>
 					<tfoot>
@@ -147,21 +147,21 @@
 	<div id="_{{item.key}}" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="Label_{{item.key}}" aria-hidden="true">
 		<div class="modal-header">
 			<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-			<h3 id="Label_{{item.key}}"><i class="icon-file"></i>{{item.name}}&nbsp;<small>(*.d.ts) definition file</small></h3>
+			<h3 id="Label_{{item.key}}"><i class="icon-file"></i>{{item.name}} <small>(*.d.ts) definition file</small></h3>
 		</div>
 		<div class="modal-body">
 			
 			<div class="nuget-badge">
-				<p>To install&nbsp;<b>{{item.name}}</b>&nbsp;use the following command:</p>
+				<p>To install <b>{{item.name}}</b> use the following command:</p>
 				
 				<p><code>$&gt; tsd install {{item.name}}</code></p>
 				
-				<p>To install&nbsp;<b>{{item.name}}</b>&nbsp;with all dependencies<br/>use the following command:</p>
+				<p>To install <b>{{item.name}}</b> with all dependencies<br/>use the following command:</p>
 				
 				<p><code>$&gt; tsd install* {{item.name}}</code></p>
 				
 				<p>
-					Download&nbsp;<b><a href="{{item.url}}">{{item.name}}.d.ts</a></b>&nbsp;file.
+					Download <b><a href="{{item.url}}">{{item.name}}.d.ts</a></b> file.
 				</p>
 			</div>				
 			
@@ -183,8 +183,8 @@
 		<footer>
 			<center>
 				<p>
-					Brought to you by&nbsp;<a href="https://github.com/diullei"><img src="http://gravatar.com/avatar/5e93890c5b54d18dd454f14789c2b225?s=80" width="40" height="40" alt="Diullei Gomes">&nbsp;Diullei Gomes</a>
-					- Thanks to&nbsp;<a href="https://github.com/borisyankov">@borisyankov</a>&nbsp;for&nbsp;<a href="https://github.com/borisyankov/DefinitelyTyped">DefinitelyTyped</a>&nbsp;project.
+					Brought to you by <a href="https://github.com/diullei"><img src="http://gravatar.com/avatar/5e93890c5b54d18dd454f14789c2b225?s=80" width="40" height="40" alt="Diullei Gomes"> Diullei Gomes</a>
+					- Thanks to <a href="https://github.com/borisyankov">@borisyankov</a> for <a href="https://github.com/borisyankov/DefinitelyTyped">DefinitelyTyped</a> project.
 				</p>
 			</center>
 		</footer>
