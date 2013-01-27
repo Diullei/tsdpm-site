@@ -64,17 +64,17 @@
 		<div id="_download" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="Label__download" aria-hidden="true">
 			<div class="modal-header">
 				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-				<h3 id="Label__download"><i class="icon-download-alt"></i>Download TSD <small>TypeScript Definition Package Manager</small></h3>
+				<h3 id="Label__download"><i class="icon-download-alt"></i>Download TSD&nbsp;<small>TypeScript Definition Package Manager</small></h3>
 			</div>
 			<div class="modal-body">
 				
 				<div class="nuget-badge">
-					<p>TSD is installed using <a href="http://nodejs.org/">node</a> and <a href="https://npmjs.org/package/tsd">npm</a>. To install use:</p>
+					<p>TSD is installed using&nbsp;<a href="http://nodejs.org/">node</a>&nbsp;and&nbsp;<a href="https://npmjs.org/package/tsd">npm</a>.&nbsp;To install use:</p>
 					
 					<p><code>$&gt; npm install -g tsd</code></p>
 					
 					<p>
-						Download as a <a href="https://github.com/Diullei/tsd/archive/master.zip">.zip</a> file.
+						Download as a&nbsp;<a href="https://github.com/Diullei/tsd/archive/master.zip">.zip</a>&nbsp;file.
 					</p>
 				</div>				
 				
@@ -147,21 +147,21 @@
 	<div id="_{{item.key}}" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="Label_{{item.key}}" aria-hidden="true">
 		<div class="modal-header">
 			<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-			<h3 id="Label_{{item.key}}"><i class="icon-file"></i>{{item.name}} <small>(*.d.ts) definition file</small></h3>
+			<h3 id="Label_{{item.key}}"><i class="icon-file"></i>{{item.name}}&nbsp;<small>(*.d.ts) definition file</small></h3>
 		</div>
 		<div class="modal-body">
 			
 			<div class="nuget-badge">
-				<p>To install <b>{{item.name}}</b> use the following command:</p>
+				<p>To install&nbsp;<b>{{item.name}}</b>&nbsp;use the following command:</p>
 				
 				<p><code>$&gt; tsd install {{item.name}}</code></p>
 				
-				<p>To install <b>{{item.name}}</b> with all dependencies<br/>use the following command:</p>
+				<p>To install&nbsp;<b>{{item.name}}</b>&nbsp;with all dependencies<br/>use the following command:</p>
 				
 				<p><code>$&gt; tsd install* {{item.name}}</code></p>
 				
 				<p>
-					Download <b><a href="{{item.url}}">{{item.name}}.d.ts</a></b> file.
+					Download&nbsp;<b><a href="{{item.url}}">{{item.name}}.d.ts</a></b>&nbsp;file.
 				</p>
 			</div>				
 			
