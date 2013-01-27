@@ -1,0 +1,198 @@
+<!doctype html>
+<html xmlns:ng="http://angularjs.org" ng-app lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="description" content="Online search to TypeScript Definition Package Manager.">
+		<meta name="author" content="Diullei Gomes">
+		<meta name="viewport" content="width=device-width,initial-scale=1">
+		<title>tsdpm - search</title>
+		<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.2.2/css/bootstrap-combined.min.css">
+
+		<link rel="stylesheet" href="css/main.css">
+		
+		<!--[if lt IE 9]>
+		<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+		<script src="http://twitter.github.com/bootstrap/assets/js/jquery.js"></script>
+	</head>
+	<body ng-controller="ctrlRead">
+    <script type="text/javascript">
+        var sortingOrder = 'name';
+    </script>
+	
+		<a href="https://github.com/Diullei/tsd"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub"></a>
+		<div class="wrapper">
+			<div class="container">
+				<header class="header row">
+					<div class="span12">
+						<h2>TypeScript Definitions</h2>
+<div>			
+	<iframe src="http://ghbtns.com/github-btn.html?user=diullei&repo=tsd&type=watch&count=true"
+	  allowtransparency="true" frameborder="0" scrolling="0" width="110px" height="20px"></iframe>
+
+<a href="https://twitter.com/share" class="twitter-share-button" data-url="http://www.tsdpm.com/" data-text="TypeScript Definition Package Manager - Search" data-via="diullei" data-hashtags="TypeScript">Tweet</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+</div>  
+
+					</div>
+				</header>
+				
+				<section class="main">
+				
+				<div class="navbar navbar-inverse" style="position: static;">
+				  <div class="navbar-inner">
+					<div class="container">
+					  <a class="brand" href="#">tsdpm</a>
+					  <form class="navbar-search pull-left" action="">
+						<input type="search" ng-model="query" ng-change="search()" class="search input-medium search-query" placeholder="Search in {{items.length}} files...">
+					  </form>
+					  <div class="nav-collapse collapse navbar-inverse-collapse">
+						<ul class="nav">
+						  <li><a href="#_download" data-toggle="modal"><i class="icon-download-alt icon-white"></i> Download TSD Tool</a></li>
+						</ul>
+						<ul class="nav pull-right">
+						  <li><a href="https://github.com/Diullei/tsd#readme"><i class="icon-question-sign icon-white"></i> About</a></li>
+						  <li><a href="https://github.com/Diullei/tsd/issues/new"><i class="icon-exclamation-sign icon-white"></i> Issues?</a></li>
+						</ul>
+					  </div><!-- /.nav-collapse -->
+					</div>
+				  </div><!-- /navbar-inner -->
+				</div>			
+
+		<div id="_download" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="Label__download" aria-hidden="true">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+				<h3 id="Label__download"><i class="icon-download-alt"></i>Download TSD <small>TypeScript Definition Package Manager</small></h3>
+			</div>
+			<div class="modal-body">
+				
+				<div class="nuget-badge">
+					<p>TSD is installed using <a href="http://nodejs.org/">node</a> and <a href="https://npmjs.org/package/tsd">npm</a>. To install use:</p>
+					
+					<p><code>$&gt; npm install -g tsd</code></p>
+					
+					<p>
+						Download as a <a href="https://github.com/Diullei/tsd/archive/master.zip">.zip</a> file.
+					</p>
+				</div>				
+				
+			</div>
+			<div class="modal-footer">
+				<button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+			</div>
+		</div>
+				
+        <div>
+			
+			<div class="bs-docs-example">
+				<table class="table">
+					<thead>
+						<tr>
+							<th data-sort="name" class="name">Name&nbsp;<a ng-click="sort_by('name')"><i class="icon-sort"></i></a></th>
+							<th data-sort="description" class="description">Description&nbsp;<a ng-click="sort_by('description')"><i class="icon-sort"></i></a></th>
+							<th data-sort="stars" class="stars">Dependencies&nbsp;<a ng-click="sort_by('dependencies')"><i class="icon-sort"></i></a></th>
+							<th data-sort="updated" class="updated">Version&nbsp;<a ng-click="sort_by('version')"><i class="icon-sort"></i></a></th>
+							<th data-sort="owner" class="owner">Author&nbsp;<a ng-click="sort_by('author')"><i class="icon-sort"></i></a></th>
+						</tr>
+					</thead>
+					<tfoot>
+						<td colspan="5">
+							<div class="row pagination pagination-large pagination-centered">
+								<ul class="paging">
+									<li ng-class="{disabled: currentPage == 0}">
+										<a href ng-click="prevPage()">«</a>
+									</li>
+									<li class="disabled" ng-show="currentPage > 0">
+										<a class="page" href >...</a>
+									</li>
+									<li ng-repeat="n in range(pagedItems.length, currentPage)"
+										ng-class="{active: n == currentPage}"
+										ng-click="setPage()">
+										<a href ng-bind="n + 1">1</a>
+									</li>
+									<li class="disabled" ng-show="currentPage < pagedItems.length - 3">
+										<a class="page" href >...</a>
+									</li>
+									<li ng-class="{disabled: currentPage == pagedItems.length - 1}">
+										<a href ng-click="nextPage()">»</a>
+									</li>
+								</ul>
+							</div>
+						</td>
+					</tfoot>
+					<tbody>
+						<tr ng-repeat="item in pagedItems[currentPage] | orderBy:sortingOrder:reverse">
+							<td class="name">
+								<a title="{{item.description}}" href="#_{{item.key}}" data-toggle="modal">
+									<i class="icon-download-alt"></i> {{item.name}}
+								</a>
+							</td>
+							<td class="description">{{item.description}}</td>
+							<td class="stars">
+								<div ng-repeat="dependency in item.dependencies">
+									<a href="#_{{get_key(dependency.name)}}" data-toggle="modal">{{dependency.name}}</a>
+								</div>
+							</td>
+							<td class="updated">{{item.version}}</td>
+							<td class="owner">
+								<a href="{{item.author_url}}">{{item.author}}</a>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+
+<div ng-repeat="item in items">
+	<div id="_{{item.key}}" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="Label_{{item.key}}" aria-hidden="true">
+		<div class="modal-header">
+			<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+			<h3 id="Label_{{item.key}}"><i class="icon-file"></i>{{item.name}} <small>(*.d.ts) definition file</small></h3>
+		</div>
+		<div class="modal-body">
+			
+			<div class="nuget-badge">
+				<p>To install <b>{{item.name}}</b> use the following command:</p>
+				
+				<p><code>$&gt; tsd install {{item.name}}</code></p>
+				
+				<p>To install <b>{{item.name}}</b> with all dependencies<br/>use the following command:</p>
+				
+				<p><code>$&gt; tsd install* {{item.name}}</code></p>
+				
+				<p>
+					Download <b><a href="{{item.url}}">{{item.name}}.d.ts</a></b> file.
+				</p>
+			</div>				
+			
+		</div>
+		<div class="modal-footer">
+			<button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+		</div>
+	</div>
+</div>
+				
+			</div>
+        </div>
+
+				</section>
+			</div>
+			<div class="push"></div>
+		</div>
+		<hr/>
+		<footer>
+			<center>
+				<p>
+					Brought to you by&nbsp;<a href="https://github.com/diullei"><img src="http://gravatar.com/avatar/5e93890c5b54d18dd454f14789c2b225?s=80" width="40" height="40" alt="Diullei Gomes">&nbsp;Diullei Gomes</a>
+					- Thanks to&nbsp;<a href="https://github.com/borisyankov">@borisyankov</a>&nbsp;for&nbsp;<a href="https://github.com/borisyankov/DefinitelyTyped">DefinitelyTyped</a>&nbsp;project.
+				</p>
+			</center>
+		</footer>
+	</body>
+	
+<script>#####SCRIPT#####</script>	
+	
+	<script src="http://twitter.github.com/bootstrap/assets/js/bootstrap-modal.js"></script>
+	<script src="http://code.angularjs.org/1.1.0/angular.min.js"></script>
+	
+<script type="text/javascript">#####SCRIPT-GOOGLE#####</script>
+</html>
