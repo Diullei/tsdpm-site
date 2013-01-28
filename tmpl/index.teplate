@@ -53,6 +53,11 @@
 						  <li><a href="#_download" data-toggle="modal"><i class="icon-download-alt icon-white"></i> Download TSD Tool</a></li>
 						</ul>
 						<ul class="nav pull-right">
+						  <li>
+							<a href="https://github.com/Diullei/tsd#how-to-contribute">
+								<i class="icon-random icon-white"></i> Hou to contribute
+							</a>
+						  </li>
 						  <li><a href="https://github.com/Diullei/tsd#readme"><i class="icon-question-sign icon-white"></i> About</a></li>
 						  <li><a href="https://github.com/Diullei/tsd/issues/new"><i class="icon-exclamation-sign icon-white"></i> Issues?</a></li>
 						</ul>
