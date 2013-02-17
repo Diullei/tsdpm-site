@@ -1,0 +1,532 @@
+body,
+input {
+  font: 14px Lucida Grande, sans-serif;
+  color: #666;
+}
+small.heart {
+  position: absolute;
+  font-size: 10px;
+  right: 0;
+  padding: 1em;
+}
+pre.sh {
+  background: #fff;
+  padding: 0.4em 0;
+}
+pre.sh::before {
+  content: "$ ";
+}
+body {
+  background: #c3bdb3;
+  border-top: solid 6px #007acc;
+  text-align: center;
+}
+input {
+  font-family: Georgia, serif;
+  border: solid 1px #ddd;
+  padding: 0.5em;
+}
+input:hover {
+  border-color: #bbb;
+}
+a:link,
+a:visited,
+a:active {
+  text-decoration: none;
+  color: #007acc;
+}
+a:link:hover,
+a:visited:hover,
+a:active:hover {
+  text-decoration: underline;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: #000;
+}
+form label {
+  display: inline-block;
+  width: 30%;
+  font-weight: bold;
+  vertical-align: top;
+  line-height: 30px;
+}
+form input {
+  display: inline-block;
+  width: 65%;
+}
+form fieldset {
+  border-width: 0;
+  margin-bottom: 5px;
+}
+form fieldset.buttons {
+  border-top-width: 1px;
+  padding-top: 1em;
+}
+form fieldset.buttons .btn {
+  margin-right: 0.5em;
+}
+form .form-help {
+  font-style: italic;
+  font-size: 0.9em;
+  color: #777;
+}
+.btn {
+  display: inline-block;
+  padding: 0.5em 1.5em;
+  background: #007acc;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  border: 0;
+  color: #fff;
+  font-weight: bold;
+  text-decoration: none;
+}
+.btn:hover,
+.btn:active {
+  background: #89221b;
+}
+.error {
+  color: #007acc;
+  font-weight: bold;
+}
+#wrap {
+  background-color: #f4f4f2;
+  padding: 15px 16px 5px;
+}
+#content {
+  width: 953px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+#wrap2 {
+  padding: 15px 16px 5px;
+}
+
+#content2 {
+  width: 953px;
+  margin: 0 auto;
+  text-align: left;
+  /*margin-right: 260px;*/
+}
+
+#content nav {
+  float: left;
+  margin: 0 5px 0 0;
+  width: 140px;
+  font-size: 11px;
+  text-transform: uppercase;
+}
+#content nav,
+#content nav a {
+  color: #999;
+}
+#content nav ul {
+  margin: 0;
+  padding: 0;
+}
+#content nav ul li {
+  border-top: solid 1px #ccc;
+}
+#content nav ul li a {
+  display: block;
+  padding: 0 0 0 2px;
+  line-height: 23px;
+}
+#content nav ul li:first-child {
+  border-top: none;
+}
+#content nav ul li.home a {
+  background-position: -156px 3px;
+}
+#content nav ul li.home a:hover {
+  background-position: -331px 3px;
+  color: #000;
+}
+#content nav ul li.home.current a {
+  background-position: 2px 3px;
+  color: #007acc;
+  font-weight: bold;
+}
+#content nav ul li.download a {
+  background-position: -156px -21px;
+}
+#content nav ul li.download a:hover {
+  background-position: -331px -21px;
+  color: #000;
+}
+#content nav ul li.download.current a {
+  background-position: 2px -21px;
+  color: #007acc;
+  font-weight: bold;
+}
+#content nav ul li.about a {
+  background-position: -156px -45px;
+}
+#content nav ul li.about a:hover {
+  background-position: -331px -45px;
+  color: #000;
+}
+#content nav ul li.about.current a {
+  background-position: 2px -45px;
+  color: #007acc;
+  font-weight: bold;
+}
+#content nav ul li.npm a {
+  background-position: -156px -69px;
+}
+#content nav ul li.npm a:hover {
+  background-position: -331px -69px;
+  color: #000;
+}
+#content nav ul li.npm.current a {
+  background-position: 2px -69px;
+  color: #007acc;
+  font-weight: bold;
+}
+#content nav ul li.docs a {
+  background-position: -156px -93px;
+}
+#content nav ul li.docs a:hover {
+  background-position: -331px -93px;
+  color: #000;
+}
+#content nav ul li.docs.current a {
+  background-position: 2px -93px;
+  color: #007acc;
+  font-weight: bold;
+}
+#content nav ul li.blog a {
+  background-position: -156px -117px;
+}
+#content nav ul li.blog a:hover {
+  background-position: -331px -117px;
+  color: #000;
+}
+#content nav ul li.blog.current a {
+  background-position: 2px -117px;
+  color: #007acc;
+  font-weight: bold;
+}
+#content nav ul li.community a {
+  background-position: -156px -141px;
+}
+#content nav ul li.community a:hover {
+  background-position: -331px -141px;
+  color: #000;
+}
+#content nav ul li.community.current a {
+  background-position: 2px -141px;
+  color: #007acc;
+  font-weight: bold;
+}
+#content nav ul li.logos a {
+  background-position: -156px -165px;
+}
+#content nav ul li.logos a:hover {
+  background-position: -331px -165px;
+  color: #000;
+}
+#content nav ul li.logos.current a {
+  background-position: 2px -165px;
+  color: #007acc;
+  font-weight: bold;
+}
+#content nav ul li.jobs a {
+  background-position: -156px -189px;
+}
+#content nav ul li.jobs a:hover {
+  background-position: -331px -189px;
+  color: #000;
+}
+#content nav ul li.jobs.current a {
+  background-position: 2px -189px;
+  color: #007acc;
+  font-weight: bold;
+}
+#content .profile {
+  padding-left: 0;
+}
+#content .profile .profsub {
+  margin: 1em 0 0 0;
+  font-size: 11px;
+}
+#content .profile .profsub a:first {
+  border-right: 1px solid #999;
+}
+#content aside.login {
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0, rgba(128,128,128,0.1)), color-stop(1, transparent));
+  background: -webkit-linear-gradient(top, rgba(128,128,128,0.1) 0%, transparent 100%);
+  background: -moz-linear-gradient(top, rgba(128,128,128,0.1) 0%, transparent 100%);
+  background: -o-linear-gradient(top, rgba(128,128,128,0.1) 0%, transparent 100%);
+  background: -ms-linear-gradient(top, rgba(128,128,128,0.1) 0%, transparent 100%);
+  background: linear-gradient(top, rgba(128,128,128,0.1) 0%, transparent 100%);
+  float: right;
+  padding: 1em;
+  width: 220px;
+}
+#content #page {
+  line-height: 150%;
+  margin-left: 200px;
+  /*margin-right: 260px;*/
+}
+#content #page header form input {
+  font-size: 18px;
+  width: 50%;
+  float: right;
+}
+#content #npm-logo {
+  position: relative;
+  top: -10px;
+}
+#content #npm-logo img {
+  border: 0;
+  width: 200px;
+  height: 78px;
+  image-rendering: -o-crisp-edges;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+}
+#footer {
+  width: 953px;
+  font-size: 12px;
+  overflow: hidden;
+  padding: 12px 0 40px;
+  margin: 12px auto 0;
+  color: #666;
+}
+#footer a.footlogo {
+  float: left;
+  background: url("/favicon.ico") 34px -17px no-repeat;
+  text-indent: -999em;
+  width: 160px;
+  height: 60px;
+}
+#footer ul {
+  float: left;
+  margin: 0;
+  padding: 0;
+}
+#footer li {
+  float: left;
+  display: block;
+  height: 26px;
+  line-height: 26px;
+  margin: 0;
+  padding: 0;
+}
+#footer li a {
+  line-height: 26px;
+  padding: 0 1em;
+  display: block;
+  height: 100%;
+  width: 100%;
+}
+#footer h2 {
+  color: #666;
+  font-weight: normal;
+  padding: 0;
+  margin: 0;
+  font-size: inherit;
+}
+#footer .poweredby {
+  clear: left;
+  margin-left: 184px;
+}
+#footer .poweredby h2 {
+  float: left;
+  line-height: 26px;
+}
+#footer .poweredby li {
+  height: 32px;
+  padding: 0 1em;
+  margin-top: -6px;
+}
+#footer .poweredby li a {
+  padding: 0;
+}
+.user {
+  padding-left: 32px;
+  position: relative;
+}
+.user .username {
+  font-weight: bold;
+}
+.user .avatar-medium {
+  margin-right: 1em;
+  float: left;
+  width: 50px;
+  height: 50px;
+}
+.user .avatar {
+  position: absolute;
+  top: -4px;
+  left: 0;
+  width: 25px;
+  height: 25px;
+}
+#index table {
+  width: 100%;
+  border-collapse: collapse;
+}
+#index table tr {
+  vertical-align: top;
+}
+#index table h2 {
+  white-space: nowrap;
+}
+table.downloads {
+  width: auto;
+  border-collapse: collapse;
+}
+table.downloads td {
+  white-space: nowrap;
+  padding-right: 1em;
+}
+table.downloads td:first-child {
+  text-align: right;
+}
+#package,
+#profile {
+  width: 490px;
+}
+#package > h1,
+#profile > h1 {
+  font: 28px Georgia, serif;
+  border-bottom: solid 1px #000;
+}
+#package .row,
+#profile .row {
+  padding: 0.75em 0;
+  border-top: solid 1px #ccc;
+}
+#package p.description,
+#profile p.description {
+  font: 18px Georgia, serif;
+}
+#package table.metadata,
+#profile table.metadata {
+  margin: 1em 0;
+  width: 100%;
+}
+#package table.metadata tr,
+#profile table.metadata tr {
+  border-top: solid 1px #ccc;
+}
+#package table.metadata th,
+#profile table.metadata th,
+#package table.metadata td,
+#profile table.metadata td {
+  padding: 0.5em 0;
+  vertical-align: baseline;
+}
+#package table.metadata th,
+#profile table.metadata th {
+  color: #000;
+  font-weight: normal;
+  text-align: left;
+  width: 120px;
+}
+#package table.metadata b,
+#profile table.metadata b {
+  color: #000;
+  font-weight: bold;
+  font-size: 14px;
+}
+#package .details ul.toc,
+#profile .details ul.toc {
+  padding: 0;
+  margin-bottom: 0;
+  font-size: 16px;
+}
+#package .details ul.toc li,
+#profile .details ul.toc li {
+  display: inline-block;
+  padding: 0.5em 32px 0.5em 16px;
+}
+#package .details ul.toc li:first-child,
+#profile .details ul.toc li:first-child {
+  background-color: #fff;
+}
+#package .details section,
+#profile .details section {
+  padding: 16px;
+  background-color: #fff;
+  margin-right: -260px;
+}
+#package .details section#readme h1,
+#profile .details section#readme h1 {
+  font-size: 24px;
+}
+#package .details section#readme img,
+#profile .details section#readme img {
+  max-width: 100%;
+}
+#package .details section#readme pre,
+#profile .details section#readme pre {
+  max-width: 100%;
+  overflow: auto;
+  font-family: Monaco, monospace;
+  background-color: #f9f9f8;
+  padding: 16px;
+}
+#package .user,
+#profile .user {
+  padding: 1px;
+}
+#package .user .avatar,
+#profile .user .avatar {
+  position: relative;
+  top: 0;
+  display: inline-block;
+  vertical-align: middle;
+  width: 32px;
+  height: 32px;
+}
+#profile {
+  position: relative;
+}
+#profile .avatar-large {
+  display: block;
+  position: absolute;
+  width: 248px;
+  height: 248px;
+  top: 0;
+  right: -260px;
+}
+#profile table.metadata tr:first-child {
+  border-top: none;
+}
+
+.nuget-badge code {
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    background-color: #202020;
+    border: 4px solid #c0c0c0;
+    border-radius: 5px;
+    box-shadow: 2px 2px 3px #6e6e6e;
+    color: #e2e2e2;
+    display: block;
+    font: 18px 'andale mono', 'lucida console', monospace;
+    line-height: 1.5em;
+    overflow: auto;
+    padding: 15px;
+}
+
+.bs-docs-example {
+  text-align: left;
+  position: relative;
+  margin: 15px 0;
+  padding: 10px 19px 14px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+}
