@@ -1,0 +1,262 @@
+<!doctype html>
+<html xmlns:ng="http://angularjs.org" ng-app lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="description" content="Online search to TypeScript Definition Package Manager.">
+		<meta name="author" content="Diullei Gomes">
+		<meta name="viewport" content="width=device-width,initial-scale=1">
+
+		<title>tsdpm - search</title>
+
+		<link type="text/css" rel="stylesheet" media="all" href="static/normalize.css">
+		<link type="text/css" rel="stylesheet" media="all" href="static/index.css">
+		<link type="text/css" rel="stylesheet" media="all" href="static/sh.css">
+        <style>
+      	  #search {
+			font-size: 18px;
+			float: right;
+			border-color: #bbb;
+			font-family: Georgia, serif;
+			border: solid 1px #ddd;
+			padding: 0.8em;
+			font: 14px Lucida Grande, sans-serif;
+			margin: 0;
+			vertical-align: baseline;
+      	  }
+        </style>
+
+
+		<link rel="stylesheet" href="css/bootstrap-combined.min.css">
+		
+		<!--[if lt IE 9]>
+		<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+		<script src="static/jquery.js"></script>
+		<!-- ####GUID#### -->
+	</head>
+	<body ng-controller="ctrlRead">
+		<div id="wrap">
+			<div id="content">
+
+				<!-- MODAL DOWNLOAD -->
+
+				<div id="_download" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="Label__download" aria-hidden="true">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+						<h3 id="Label__download"><i class="icon-download-alt"></i>Download TSD <small>TypeScript Definition Package Manager</small></h3>
+					</div>
+					<div class="modal-body">
+						
+						<div class="nuget-badge">
+							<p>TSD is installed using <a href="http://nodejs.org/">node</a> and <a href="https://npmjs.org/package/tsd">npm</a>. To install use:</p>
+							
+							<p><code>$&gt; npm install -g tsd</code></p>
+							
+							<p>
+								Download as a <a href="https://github.com/Diullei/tsd/archive/master.zip">.zip</a> file.
+							</p>
+						</div>				
+						
+					</div>
+					<div class="modal-footer">
+						<button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+					</div>
+				</div>
+
+				<!-- END MODAL DOWNLOAD -->
+
+				<nav>
+				  <ul>
+				    <li class="download current">
+				      <a href="#_download" data-toggle="modal"><i class="icon-download-alt"></i> Download TSD tool</a>
+				    </li>
+				    <li class="about">
+				      <a href="https://github.com/Diullei/tsd#readme"><i class="icon-question-sign"></i> About</a>
+				    </li>
+				    <li class="community">
+				      <a href="https://github.com/Diullei/tsd#how-to-contribute"><i class="icon-random"></i> Contribute</a>
+				    </li>
+				    <li class="logos">
+				      <a href="https://github.com/Diullei/tsd/issues/new"><i class="icon-exclamation-sign"></i> Issues?</a>
+				    </li>
+				  </ul>
+				</nav>
+
+				<div id="page">
+					<header>
+						<table>
+							<tr>
+								<td>
+									<div style="width:285px;display: inline-block">
+								      <a href="/">
+								        <img src="img/tsdpm.png" alt="tsdpm" style="margin-bottom: 10px;">
+								      </a>
+							      	</div>
+								</td>
+								<td>&nbsp;&nbsp;&nbsp;</td>
+								<td>
+									<div style="width:285px;display: inline-block">
+						      			<input id="search" type="search" class="span3" ng-model="query" ng-change="search()" placeholder="Search in {{items.length}} typescript typings..." autofocus="autofocus">
+					      			</div>
+								</td>
+							</tr>
+						</table>
+
+						<!-- SHARES -->
+
+						<a href="https://github.com/Diullei/tsd"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub"></a>
+						<div class="wrapper">
+
+						<iframe src="http://ghbtns.com/github-btn.html?user=diullei&repo=tsd&type=watch&count=true"
+						allowtransparency="true" frameborder="0" scrolling="0" width="110px" height="20px"></iframe>
+
+						<a href="https://twitter.com/share" class="twitter-share-button" data-url="http://www.tsdpm.com/" data-text="TypeScript definition files - online search" data-via="diullei" data-hashtags="TypeScript">Tweet</a>
+						<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+						</div>  
+						<!-- END SHARES -->
+					</header>
+  				</div>
+
+
+			</div>
+		</div>
+
+
+
+
+	<!-- **************************************************** -->
+
+    <script type="text/javascript">
+        var sortingOrder = 'name';
+    </script>
+	
+
+<div id="wrap2"><div id="content2">
+
+
+	<div>
+				
+		<section class="main">
+		
+				
+        <div>
+			
+			<div>
+				<table class="table">
+					<thead>
+						<tr>
+							<th data-sort="name" class="name">Name <a ng-click="sort_by('name')"><i class="icon-sort"></i></a></th>
+							<th data-sort="description" class="description">Description <a ng-click="sort_by('description')"><i class="icon-sort"></i></a></th>
+							<th data-sort="stars" class="stars">Dependencies <a ng-click="sort_by('dependencies')"><i class="icon-sort"></i></a></th>
+							<th data-sort="updated" class="updated">Version <a ng-click="sort_by('version')"><i class="icon-sort"></i></a></th>
+							<th data-sort="owner" class="owner">Author <a ng-click="sort_by('author')"><i class="icon-sort"></i></a></th>
+						</tr>
+					</thead>
+					<tfoot>
+						<td colspan="5">
+							<div class="row pagination pagination-large pagination-centered">
+								<ul class="paging">
+									<li ng-class="{disabled: currentPage == 0}">
+										<a href ng-click="prevPage()">«</a>
+									</li>
+									<li class="disabled" ng-show="currentPage > 0">
+										<a class="page" href >...</a>
+									</li>
+									<li ng-repeat="n in range(pagedItems.length, currentPage)"
+										ng-class="{active: n == currentPage}"
+										ng-click="setPage()">
+										<a href ng-bind="n + 1">1</a>
+									</li>
+									<li class="disabled" ng-show="currentPage < pagedItems.length - 3">
+										<a class="page" href >...</a>
+									</li>
+									<li ng-class="{disabled: currentPage == pagedItems.length - 1}">
+										<a href ng-click="nextPage()">»</a>
+									</li>
+								</ul>
+							</div>
+						</td>
+					</tfoot>
+					<tbody>
+						<tr ng-repeat="item in pagedItems[currentPage] | orderBy:sortingOrder:reverse">
+							<td class="name">
+								<a title="{{item.description}}" href="#_{{item.key}}" data-toggle="modal">
+									<i class="icon-download-alt"></i> {{item.name}}
+								</a>
+							</td>
+							<td class="description">{{item.description}}</td>
+							<td class="stars">
+								<div ng-repeat="dependency in item.dependencies">
+									<a href="#_{{get_key(dependency.name)}}" data-toggle="modal">{{dependency.name}}</a>
+								</div>
+							</td>
+							<td class="updated">{{item.version}}</td>
+							<td class="owner">
+								<a href="{{item.author_url}}">{{item.author}}</a>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+
+<div ng-repeat="item in items">
+	<div id="_{{item.key}}" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="Label_{{item.key}}" aria-hidden="true">
+		<div class="modal-header">
+			<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+			<h3 id="Label_{{item.key}}"><i class="icon-file"></i>{{item.name}} <small>(*.d.ts) definition file</small></h3>
+		</div>
+		<div class="modal-body">
+			
+			<div class="nuget-badge">
+				<p>To install <b>{{item.name}}</b> use the following command:</p>
+				
+				<p><code>$&gt; tsd install {{item.name}}</code></p>
+				
+				<p>To install <b>{{item.name}}</b> with all dependencies<br/>use the following command:</p>
+				
+				<p><code>$&gt; tsd install* {{item.name}}</code></p>
+				
+				<p>
+					Download <b><a href="{{item.url}}">{{item.name}}.d.ts</a></b> file.
+				</p>
+			</div>				
+			
+		</div>
+		<div class="modal-footer">
+			<button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+		</div>
+	</div>
+</div>
+				
+			</div>
+        </div>
+
+				</section>
+			</div>
+			<div class="push"></div>
+		</div>
+
+
+</div></div>
+
+
+		<hr/>
+
+		<div id="footer">
+			<p>
+				Brought to you by <a href="https://github.com/diullei"><img src="http://gravatar.com/avatar/5e93890c5b54d18dd454f14789c2b225?s=80" width="40" height="40" alt="Diullei Gomes"> Diullei Gomes</a>
+				- Thanks to <a href="https://github.com/borisyankov">@borisyankov</a> for <a href="https://github.com/borisyankov/DefinitelyTyped">DefinitelyTyped</a> project.
+			</p>
+		</div>
+
+
+
+	</body>
+	
+<script>#####SCRIPT#####</script>	
+	
+	<script src="static/bootstrap-modal.js"></script>
+	<script src="static/angular.min.js"></script>
+	
+<script type="text/javascript">#####SCRIPT-GOOGLE#####</script>
+</html>
