@@ -9,6 +9,6 @@
     "npm": "1.1.x"
   },
   "scripts": {
-    "test": "expresso ci-test.js"
+    "test": "node ./ci-test.js"
   }
 }
