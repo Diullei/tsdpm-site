@@ -1,1 +1,1 @@
- test: node ci-test.js
+ test: ./node ci-test.js
