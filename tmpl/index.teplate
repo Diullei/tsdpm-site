@@ -51,6 +51,7 @@
 					  <div class="nav-collapse collapse navbar-inverse-collapse">
 						<ul class="nav">
 						  <li><a href="#_download" data-toggle="modal"><i class="icon-download-alt icon-white"></i> Download TSD Tool</a></li>
+						  <li><a href="http://nuget.org/packages?q=Definitelytyped"><i class="icon-download-alt icon-white"></i> NuGet</a></li>
 						</ul>
 						<ul class="nav pull-right">
 						  <li>
@@ -79,7 +80,8 @@
 					<p><code>$&gt; npm install -g tsd</code></p>
 					
 					<p>
-						Download as a <a href="https://github.com/Diullei/tsd/archive/master.zip">.zip</a> file.
+						Download as a <a href="https://github.com/Diullei/tsd/archive/master.zip">.zip</a> file.<br/>
+						or use <a href="http://nuget.org/packages?q=Definitelytyped">NuGet</a>
 					</p>
 				</div>				
 				
@@ -161,9 +163,11 @@
 				
 				<p><code>$&gt; tsd install {{item.name}}</code></p>
 				
-				<p>To install <b>{{item.name}}</b> with all dependencies<br/>use the following command:</p>
+				<p>To install <b>{{item.name}}</b> with all dependencies<br/>use the <b>install*</b> command.</p>
+
+				<p>To install <b>{{item.name}}</b> with <a href="http://nuget.org/packages?q=Definitelytyped">NuGet</a></p>
 				
-				<p><code>$&gt; tsd install* {{item.name}}</code></p>
+				<p><code>PM> Install-Package {{item.name}}.TypeScript.DefinitelyTyped</code></p>
 				
 				<p>
 					Download <b><a href="{{item.url}}">{{item.name}}.d.ts</a></b> file.
