@@ -14,7 +14,7 @@
 		<!--[if lt IE 9]>
 		<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 		<![endif]-->
-		<script src="http://twitter.github.com/bootstrap/assets/js/jquery.js"></script>
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 		<!-- ####GUID#### -->
 	</head>
 	<body ng-controller="ctrlRead">
